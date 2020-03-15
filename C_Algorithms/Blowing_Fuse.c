@@ -5,16 +5,14 @@
 
 int main()
 {
-    int n, m, c, max, force, dev_a[n + 1], id;
+    int n, m, c, max = 0, force = 0,  id;
 
     scanf("%d%d%d", &n, &m, &c);
+    int dev_a[n];
 
     for (int i = 1; i <= n; i++)
     {
-        scanf("%d", dev_a + i);
-
-        max = 0;
-        force = 0;
+        scanf("%d", dev_a[i]);
     }
 
     for (int i = 0; i < m; i++)
@@ -22,7 +20,7 @@ int main()
         scanf("%d", &id);
 
         force += dev_a[id];
-        dev_a[id] = -dev_a[id];
+        dev_a[id] = dev_a[id];
 
         if (force > max)
             max = force;
